@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active:
+      - native, git #, vault
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+        git:
+          uri: https://github.com/chlwlgus4/spring-cloud-config.git
+          search-paths: src/main/resources
+          default-label: master
+
+server:
+  port: 8071
